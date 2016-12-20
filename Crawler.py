@@ -25,7 +25,7 @@ requests_data = rs.get(data_url, headers=headers)
 requests_data.encoding = "utf-8"
 soup = bs(requests_data.text, "lxml")
 print(soup)
-for div in soup.findAll('div'):
+for td in soup.findAll('div'):
     try:
         print(td.string.encode(sys.stdin.encoding,
                                "replace").decode(sys.stdin.encoding))
